@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+/* Definición de variables */
+:root {
+    --color-primario: rgb(9, 228, 144);
+    --color-secundario: #333;;
+    --color-terciario: #555;
+    --color-gris: #B0B9C3;
+    --color-blanco: #FFFFFF;
+    --tipo-fuente: 'Arial', sans-serif;
+}
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Uso de variables en diferentes elementos */
+body {
+  font-family: var(--tipo-fuente);
+}
+
+.header {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.button {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+

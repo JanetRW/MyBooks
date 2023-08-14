@@ -1,0 +1,65 @@
+
+.contenidoFormulario{
+            
+    flex: 1 1 auto;
+    /* border: rgba(10, 230, 47, 0.524) 4px solid;
+    border-radius: 6px; */
+    height: 96vh;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    padding: 1px 2px;
+    /* margin-right:4px ;
+    margin-left: 50px;
+    margin-top: 3%; */
+    font-size: large;
+    background-image: url('/assets/img/register.jpg'); 
+}
+    .tituloform{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color:var(--color-primario);
+        margin-top: 3%;
+    }
+form {
+/* border: rgb(36, 37, 40) 4px solid;
+border-radius: 6px; */
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0.5rem;
+max-width: 2000px;
+margin: 0 auto;
+margin-top: 3%;
+
+} 
+ label {
+display: block;
+font-weight: bold;
+color:var(--color-blanco);
+font-size: 3vh;
+margin-top: 3%;
+} 
+ input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.4rem;
+    
+  }
+  button {
+    background-color:var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    
+  }
+  button:hover {
+    background-color: var(--color-terciario);
+  }

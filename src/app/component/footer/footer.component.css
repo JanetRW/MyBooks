@@ -1,0 +1,23 @@
+footer{
+  background-color: var(--color-secundario);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+  .footerRedes{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px;
+  }
+      img{
+          width: 30px;
+          height: 30px;
+      }
+  .mifirmaFooter{
+      color: var(--color-gris);
+  }
+
