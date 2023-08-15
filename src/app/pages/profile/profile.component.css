@@ -1,0 +1,147 @@
+.padre{
+    height: 100vh;
+    background-image: url(../../../assets/img/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+    .cajaIzquierda{
+    height: 80%;
+    width: 40%;
+    border-radius: 30px;
+    background-color: #fafafa10;
+    backdrop-filter: blur(0.1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    }
+        .image img{
+            height: 200px;
+            width: 200px;
+            border-radius: 30px;
+        }
+        .tituloIzq{
+            color:var(--color-blanco);
+            font-family: var(--tipo-fuente);
+        
+        }
+        .contenidoForm{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 40%;
+        }
+            /* .contactForm{
+            height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+    
+        } */
+        .formDatos {
+            /* border: rgb(36, 37, 40) 4px solid;
+            border-radius: 6px; */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            max-width: 2000px;
+            margin: 0 auto;
+            margin-top: 3%;
+            
+            }
+                label {
+                    display: block;
+                    font-weight: bold;
+                    color:var(--color-blanco);
+                    font-size: 3vh;
+                    margin-top: 3%;
+                    } 
+                input {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-top: 0.4rem;
+                }
+    .cajaDerecha{
+        height: 80%;
+        width: 40%;;
+        border-radius: 30px;
+        background-color: #fafafa10;
+        backdrop-filter: blur(0.1rem);
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-around;
+        align-items: center;
+}
+        .form1{
+            height: 10%;
+            /* width: 40%;; */
+            display: flex;
+            /* flex-direction: column; */
+            /* justify-content: space-around;
+            align-items: center;  */
+        }
+            .tituloDer{
+                /* border:10px solid rgb(174, 255, 0);
+                border-radius: 14px; */
+                color:var(--color-primario);
+                font-size: 20px;
+                font-family:var(--tipo-fuente);
+                margin-bottom: 50%;
+                text-align: center;
+            }
+            /* .line{
+                background-color: var(--color-blanco);
+                width:30%;
+            } */
+        .form2{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            }
+                .formEditar{
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-bottom: 50%;
+                }
+
+                button {
+                    background-color:var(--color-primario);
+                    color: var(--color-blanco);
+                    border: none;
+                    border-radius: 16px;
+                    padding: 1rem 1rem;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    width: 50%;
+    
+                }
+                button:hover {
+                    background-color: var(--color-terciario);
+                }
+
+                input {
+                /* width: 100%; */
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-top: 0.4rem;
+                width:200px;
+                text-align: center;
+    
+                }
+  

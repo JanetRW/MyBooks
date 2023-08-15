@@ -1,0 +1,43 @@
+<div class="padre">
+    <!-- caja izquierda -->
+    <div class="cajaIzquierda">
+        <div class="image">
+            <img src="{{miUser.photo}}" alt="">
+        </div>
+        <div class="titulo_Izq"><h1>{{miUser.nombreCompleto()}}</h1></div>
+        <section class="contenidoForm"> 
+            <form class="formDatos">
+                <label for="nombre">Nombre:</label>
+                <input type="text" value="{{miUser.name}}">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" value="{{miUser.last_name}}">
+       
+                <label for="email">Correo:</label>
+                <input type="text" value="{{miUser.email}}">
+            </form>
+        </section>
+    </div>
+    <!-- caja derecha -->
+    <div class="cajaDerecha">
+        <form>
+            <div class="form1">
+                <div class="tituloDer"><h1>Editar datos</h1></div>
+                <div class="line"></div>
+            </div>
+            <div class="form2">
+                <div class="formEditar">
+                    <input type="text" placeholder="Nombre" #name1>
+                    <input type="text" placeholder="Apellidos" #last_name1>
+                    <input type="text" placeholder="Correo" #email1>
+                    <input type="text" placeholder="Url" #photo1>
+                </div>
+
+                <button (click)=modificar(name1,last_name1,email1,photo1)>
+                    Modificar
+                </button>
+            </div>
+        </form>    
+    </div>
+        
+</div>
