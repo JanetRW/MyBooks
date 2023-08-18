@@ -1,0 +1,64 @@
+
+<!-- RETO 3.DIA3
+    En la página books, haced una card que muestre todos los campos de la clase book.-->
+<div class="contenido_Books">
+    <div *ngIf = "books.length >=1; else noBooks" class="condicional_ngIf">
+        <!--• Modificad la página books para mostrar tantas card como tengamos en el array de libros
+        (haciendo uso del *ngfor)-->
+        <div *ngFor="let book of books let esPar = even">
+            <!--Esta card debe estar en un contenedor que permita agregar tantas card como se necesite sin
+            romper el diseño-->
+            <div class="card" style="width: 16rem;">
+                <img src="{{book.photo}}" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-text1">{{book.type}}</h5>
+                        <h5 class="card-text1">___________________________________</h5>
+                        <h4 class="card-title" style="color: #22fcc5ea  ;">{{book.title}}</h4>
+                        <p class="card-text1" >{{book.author}}</p>
+                        <h3 class="card-text"style="color: #fc2222ea;">{{book.price}} €</h3>
+                        <div class=" card-ref">
+                            <p class="card-text1 "style="color: #2e3030ea;" >{{book.id_book | ref }} </p>
+                            <!--Resaltar los botones de las card con colores distintos dependiendo si la card está en posición
+                            par o impar capturando la variable interna “even” del *ngFor, utilizar para ello *ngClass-->
+                            <button class="button1" [ngClass]=" esPar ? 'button1' : 'button2' ">Comprar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--En caso que el array libros este vacío se deberá mostrar un mensaje indicándolo (haciendo
+    uso del *ngIf)-->
+    <ng-template #noBooks >No hay libros en este momento</ng-template>
+    <!--Reto 4
+• Añadir a la página books un formulario con todos los campos necesarios para crear un libro.-->
+
+    <!-- FORMULARIO -->
+    <div class="formulario">
+        <form>
+            <div class="form1">
+                <div class="tituloForm"><h1>Añadir Libro</h1></div>
+            </div>
+           
+            <div class="formEditar">
+                <input type="text" placeholder="ID Book" #id >
+                            
+                <input type="text" placeholder="Título" #title >
+                          
+                <input type="text" placeholder="Tapa blanda/dura" #type>
+            
+                <input type="text" placeholder="Autor" #author>
+            
+                <input type="number" placeholder="Precio" #price>
+            
+                <input type="text" placeholder="Foto" #photo>
+            </div>
+    
+        </form>
+<!--• Implementar funcionalidad que cuando se inserten datos en el formulario y se llame al evento
+    click se agregue un nuevo libro al array libros del componente-->
+        <div class="botonesFormulario">
+            <button  type="button" class="botonesFormulario-function" (click)="agregarBook(id.value, title.value, type.value, author.value, price.value, photo.value)">Insertar Libro</button>
+        </div>
+        
+    </div> 
+</div>

@@ -8,8 +8,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ProfileComponent } from './pages/profile/profile.component'; // Asegúrate de que la ruta sea correcta
-
+import { ProfileComponent } from './pages/profile/profile.component';
+import { BooksComponent } from './pages/books/books.component';
+import { RefPipe } from './pipes/ref.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { ProfileComponent } from './pages/profile/profile.component'; // Asegúr
     FormRegisterComponent,
     RegisterComponent,
     ProfileComponent,
+    BooksComponent,
+    RefPipe,
   ],
   imports: [
     BrowserModule,
