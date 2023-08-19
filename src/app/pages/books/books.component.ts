@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Books } from 'src/app/models/books';
 
 @Component({
@@ -28,9 +28,11 @@ export class BooksComponent {
     let nuevoBooks = new Books(nuevoIdBook,nuevoTitulo,nuevoTipo,nuevoAutor, nuevoPrecio, nuevoFoto)
     this.books.push(nuevoBooks);
   }
-
-  ngOnInit(): void {
+  //Comunicación HIJO-PADRE
+   public eliminarBook(book: Books): void {
+    this.books = this.books.filter(libro => libro.id_book !== book.id_book);
   }
+
 
 }
 

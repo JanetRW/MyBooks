@@ -1,0 +1,46 @@
+.contenido_Books{
+    background-image: url('/assets/img/books.jpg');
+    background-repeat: repeat;
+    padding: 14px 5px ;
+   }
+  
+  /* CARDS ------------------------------------ */
+      .condicional_ngIf{
+                      display: flex;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                      gap: 40px;
+      }
+      .cardBotonX{
+        border: none;
+        color: var(--color-blanco);
+        background-color: var(--color-terciario);
+        width: 40%;        
+        padding: 5px;
+        border-radius: 5px;                          
+    }
+    .cardBotonX:hover{
+        color: var(--color-primario);
+    }
+          .card-text1{
+                      color:var(--color-blanco);
+          }
+          .card-ref{
+                      display: flex;
+                      justify-content: space-between;
+          }
+              .button1{
+                    width: 50%;
+                    background-color: black;
+                    border: none;
+                    color:var(--color-blanco);
+                    padding: 10px;
+                    border-radius: 5px;
+              }
+              .button2{
+                    width: 50%;
+                    background-color: var(--color-primario);
+                    border: none;
+                    color: var(--color-blanco);
+                    padding: 10px;
+              }

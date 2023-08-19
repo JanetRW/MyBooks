@@ -1,0 +1,25 @@
+<!--Reto1 DIA 4
+• Copiar el html y css de la tarjeta ubicada en la pagina books en el componente card creado.
+• Modificar el diseño de las cards en la para agregar un botón "X" en la parte superior de las mismas. Al
+pulsar este botón se eliminará la tarjeta.-->
+<div class="contenido_Books">
+    <!--Comunicación HIJO-PADRE Aquí en el evento (click) se invoca a la función eliminarBook()proveniente de card.component.ts-->
+    <button class="cardBotonX" (click)="eliminarBook()">Eliminar X</button>
+        <div class="card" style="width: 16rem;">
+            <img src="{{book.photo}}" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
+            <div class="card-body">
+                <!--Comunicación Padre-Hijo desde el hijo card.component.ts book va llamar a cada atributo type,title,author..-->
+                <h5 class="card-text1">{{book.type}}</h5>
+                <h5 class="card-text1">___________________________________</h5>
+                <h4 class="card-title" style="color: #22fcc5ea  ;">{{book.title}}</h4>
+                <p class="card-text1" >{{book.author}}</p>
+                <h3 class="card-text"style="color: #fc2222ea;">{{book.price}} €</h3>
+                <div class=" card-ref">
+                    <p class="card-text1 "style="color: #2e3030ea;" >{{book.id_book | ref }} </p>
+                            
+                    <button class="button1" [ngClass]=" esPar ? 'button1' : 'button2' ">Comprar</button>
+                </div>
+            </div>
+        </div>
+</div>
+
