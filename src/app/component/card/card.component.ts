@@ -14,7 +14,7 @@ export class CardComponent {
   @Output() bookEliminado= new EventEmitter<Books>();
 
   //Aquí Comunicación HIJO-PADRE se crea la función eliminarBook() 
-  eliminarBook():void{
+  delete():void{
     this.bookEliminado.emit(this.book); //emit--> hace que emita el evento bookEliminado
   }
   ngOnInit():void{}

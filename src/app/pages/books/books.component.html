@@ -1,21 +1,25 @@
-<!--Reto 2
-• Modificar la página books para llamar al componente card.
-• Se mostraran tantas card como libros existan.
-• Realizar todos los cambios necesarios para que la pagina libros funcione correctamente utilizando la
-comunicación padre-hijo.-->
+<!--Reto 3.1 DIA 5
+• En la página de mostrar libros sobre el contenedor donde mostramos las cards, se debe
+maquetar un buscador, en caso que el buscador este vacío se deben mostrar todos los libros
+y sino el libro indicado por id_book.-->
 <div class="contenido_Books">
+    <div class="buscador">
+        <input #id_Book type="search" placeholder="Introduce una Ref">
+        <button (click)="buscar(id_Book.value)">Buscar por Ref</button>
+    </div>
     <div *ngIf = "books.length >=1; else noBooks" class="condicional_ngIf">
         <ng-container *ngFor="let book of books let esPar = even">
+           
             <!--Aquí comunicación PADRE-HIJO 
             donde "book","esPar","books" son los nombres de las variables
              [book], [esPar], [books] son los atributos en corchetes están en card.componetn.ts-->
-            <app-card [book]="book" [esPar]="esPar"[books]="books" (bookEliminado)="eliminarBook($event)"></app-card>
+            <app-card [book]="book" [esPar]="esPar"[books]="books" (bookEliminado)="borrar($event)"></app-card>
             <!--Aquí comunicación HIJO-PADRE (bookEliminado)="eliminarBook($event)" proviene del hijo card.component.ts-->
             
         </ng-container>
     </div>
     <ng-template #noBooks >No hay libros en este momento</ng-template>
-    <div class="formulario">
+    <!--<div class="formulario">
         <form>
             <div class="form1">
                 <div class="tituloForm"><h1>Añadir Libro</h1></div>
@@ -41,5 +45,5 @@ comunicación padre-hijo.-->
             <button  type="button" class="botonesFormulario-function" (click)="agregarBook(id.value, title.value, type.value, author.value, price.value, photo.value)">Insertar Libro</button>
         </div>
         
-    </div> 
+    </div>-->
 </div>

@@ -1,0 +1,29 @@
+<div class="contenido_Books">
+    <div class="formulario">
+        <form>
+            <div class="form1">
+                <div class="tituloForm"><h1>Añadir Libro</h1></div>
+            </div>
+       
+            <div class="formEditar">
+                <input type="text" placeholder="ID Book" #id >
+                        
+                <input type="text" placeholder="Título" #title >
+                      
+                <input type="text" placeholder="Tapa blanda/dura" #type>
+        
+                <input type="text" placeholder="Autor" #author>
+        
+                <input type="number" placeholder="Precio" #price>
+        
+                <input type="text" placeholder="Foto" #photo>
+            </div>
+
+        </form>
+
+        <div class="botonesFormulario">
+            <button  type="button" class="botonesFormulario-function" (click)="crearBook(id.value, title.value, type.value, author.value, price.value, photo.value)">Insertar Libro</button>
+        </div>
+    </div>
+    
+</div>
