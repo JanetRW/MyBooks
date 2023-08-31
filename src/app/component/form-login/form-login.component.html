@@ -1,0 +1,40 @@
+<!--RETO 2 DIA6 Reto 2: Creación del Componente Login
+• Crear componente form-login usando los formularios Template Driven.
+• Maquetar dicho componente con 2 inputs (correo,contraseña). Todos los campos serán obligatorios.
+• Añadir todas las validaciones que se consideren oportunas.
+• Resaltar con CSS y con mensajes textuales los campos que no sean válidos.
+• No se podrá hacer submit hasta que el formulario no sea completamente válido.-->
+<div class = "contenido">
+    <div class = "main">
+        <form class ="mb-4" #user="ngForm" (ngSubmit)="onSubmit(user)">
+            <div class="form1">
+                <div class="tituloForm"><h1>Bienvenido</h1></div>
+            </div>
+        <!--input correo-->
+            <div class="form-group">
+            
+                <input type="email" class="form-control" placeholder="Correo electrónico" style="width: 250px;"  name="email" [(ngModel)]="user.email" #emailId="ngModel"
+                [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" email required>
+                <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback">
+                    <div *ngIf="emailId.errors.required">La dirección de email es obligatoria</div>
+                    <div *ngIf="emailId.errors.email">Dirección email incorrecta</div>
+                </div>
+            </div>
+        <!--input Contraseña-->
+            <div class="form-group">
+            
+                <input type="password" class="form-control" placeholder="Contraseña" style="width: 250px;" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
+                [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid }" minlength="8" required>
+                <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="invalid-feedback">
+                    <div *ngIf="passwordId.errors.required">La clave es obligatoria</div>
+                    <div *ngIf="passwordId.errors.minlength">La clave debe tener al menos 8 caracteres</div>
+                </div>
+            </div>
+     
+            <div class="form-group">
+                <button class="form_button" [disabled]="user.invalid">Login</button>
+            </div> 
+  
+        </form> 
+    </div>
+</div>

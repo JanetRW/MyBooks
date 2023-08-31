@@ -12,7 +12,6 @@ export class UpdateBookComponent {
 
   constructor(public booksService : BooksService) { }
 
-
   modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
     let precioNum = parseInt(newprecio)
     let IdNum = parseInt(newIdBook)

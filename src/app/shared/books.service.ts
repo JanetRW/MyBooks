@@ -48,7 +48,7 @@ public add(newlibro:Books):void{
 
   this.arrayBooks.push(newlibro);
 //RETO 5.1 - Se añada un nuevo libro en la página books.
-  alert('Nuevo libro agregado');
+  //alert('Nuevo libro agregado');
     //console.log('Nuevo Book agregado');
     console.log(newlibro);
   }
@@ -113,5 +113,4 @@ public delete(id_Book:number):boolean{ //el parámetro id_Book-->el ID del libro
     //la función igualmente retornará true porque la declaración return true se encuentra fuera del bucle for.
   }
 }
-
 

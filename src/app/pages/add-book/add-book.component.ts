@@ -7,13 +7,13 @@ import { BooksService } from 'src/app/shared/books.service';
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.css']
 })
-export class AddBookComponent {
+export class AddBookComponent 
+{
   public mybooks:Books;
 
   constructor(private booksService : BooksService) { }
-
-
-  crearBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
+ 
+    crearBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
     
     let precioNum = parseInt(newprecio)
     let IdNum = parseInt(newIdBook)
@@ -21,9 +21,10 @@ export class AddBookComponent {
     let newBook = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto)
 
     this.booksService.add(newBook);
-   
-  }
+ 
+  alert('Libro editado correctamente');
 
+}
   ngOnInit(): void {
   }
 

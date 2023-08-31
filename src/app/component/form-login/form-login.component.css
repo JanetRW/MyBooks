@@ -11,13 +11,10 @@
     background-image: url('/assets/img/register.jpg'); 
 }
     .main{
-    /* border: rgba(10, 230, 47, 0.524) 4px solid;
-    border-radius: 6px;  */
-    /* height:50% ; */
+    
         /* margin-bottom: 200px; */
         padding: 5px;
         width: 40%;
-        height: 80vh;
         border-radius: 30px;
         background-color: #fafafa10;
         backdrop-filter: blur(0.3rem);
@@ -28,9 +25,7 @@
         margin-left:30%;
         margin-top: 3%;
         }
-        .hidden {
-            display: none !important;
-        }
+
 
         form {
             /* border: rgb(36, 37, 40) 4px solid;
@@ -52,16 +47,16 @@
                 color:var(--color-primario);
                 font-size: 20px;
                 font-family:var(--tipo-fuente);
-                margin-top: 25%;
+                margin-bottom: 10%;
                 text-align: center;
             }
         .form-group{
-            /* height: 5%; */
+            height: 20%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            margin-top:5%;
+            margin-bottom: 10%;
         }
             input {
                 padding: 0.5rem;
@@ -71,8 +66,7 @@
                 width:200px;
                 text-align: center;
             }
-            
-               
+  
             .form_button{
                       background-color:var(--color-primario);
                       color: var(--color-blanco);
@@ -82,8 +76,7 @@
                       cursor: pointer;
                       display: flex;
                       justify-content: center;
-                      width: 80%;
-                      margin-top:10% ;
+                      width: 230%;
             }
              .form_button:disabled{
                 background-color: var(--color-gris);
@@ -92,7 +85,7 @@
             
 /* Validación de los inputs*/
 /* .is-invalid[type=text]:focus, .is-invalid[type=password]:focus{ */
-    /* .invalid-feedback{
+    .invalid-feedback{
                         color: red;
                         
     }
@@ -100,7 +93,10 @@
             border-color: var(--color-terciario);
             box-shadow: 0 0 8px red;
             outline: 0 none;
+    }
+
+    /* .invalid-input{
+            width: 350px;
+            font-size: 12px;
+            text-align: end;
     } */
-
-
-

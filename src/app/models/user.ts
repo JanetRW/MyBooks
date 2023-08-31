@@ -19,3 +19,6 @@ export class User {
         return this.name + " " + this.last_name
     }
 }
+
+
+    
