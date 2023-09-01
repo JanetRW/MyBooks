@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Books } from 'src/app/models/books';
 import { BooksService } from 'src/app/shared/books.service';
+import { Respuesta } from 'src/app/models/respuesta';
 
 @Component({
   selector: 'app-update-book',
@@ -13,21 +14,28 @@ export class UpdateBookComponent {
   constructor(public booksService : BooksService) { }
 
 
-  modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
+  public modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
     let precioNum = parseInt(newprecio)
     let IdNum = parseInt(newIdBook)
     console.log(precioNum);
     
 
     let newBook = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto);
-
-    console.log('controler');
+    this.booksService.edit(newBook).subscribe((data:Respuesta)=>{
+  
     console.log(newBook);
 
-    this.booksService.edit(newBook);
+    if (!data.error)
+    {
+      alert("Libro editado");
+      
+    } 
+    else
+      alert("No se encuentra libro para editar");
+
+   })
+   console.log(this.mybooks);
   }
 
-  ngOnInit(): void {
+    
   }
-
-}
