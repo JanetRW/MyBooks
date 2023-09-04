@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Books } from 'src/app/models/books';
 import { BooksService } from 'src/app/shared/books.service';
+import { Respuesta } from 'src/app/models/respuesta';
 
 @Component({
   selector: 'app-update-book',
@@ -11,22 +12,58 @@ export class UpdateBookComponent {
   public mybooks:Books;
 
   constructor(public booksService : BooksService) { }
+  ngOnInit(): void {
+  }
 
+<<<<<<< HEAD
   modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
+=======
+  public modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
+>>>>>>> dia7
     let precioNum = parseInt(newprecio)
     let IdNum = parseInt(newIdBook)
     console.log(precioNum);
     
 
-    let newBook = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto);
+    let bookEdited = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto);
+    this.booksService.edit(bookEdited).subscribe((res:Respuesta)=>{
+    // console.log('Respuesta del servicio:', res);
+    console.log('Datos del libro a editar:', bookEdited);
 
-    console.log('controler');
-    console.log(newBook);
+    if (!res.error)
+    {
+      alert("Libro editado");
+      this.mybooks = res.res_book;
+      console.log(res.res_book);
+    } 
+    else
+      alert("No se encuentra libro para editar");
 
-    this.booksService.edit(newBook);
+   })
+   console.log(this.mybooks);
   }
 
-  ngOnInit(): void {
+    
   }
 
-}
+  
+/*     let editBook: Books = new Books(id_book,id_user,title,type,author,price,photo)
+    
+    
+    this.bookService.edit(editBook).subscribe((data:Response)=>{
+      console.log(editBook);
+    if (!data.error)
+    {
+      alert("Has editado un libro");
+      
+    } 
+    else
+    alert("No se encuentra el libro");
+
+   })
+   console.log(this.books);
+  }
+
+    
+  }
+ */

@@ -7,8 +7,8 @@ y sino el libro indicado por id_book.-->
         <input #id_Book type="search" placeholder="Introduce una Ref">
         <button (click)="buscar(id_Book.value)">Buscar por Ref</button>
     </div>
-    <div *ngIf = "books.length >=1; else noBooks" class="condicional_ngIf">
-        <ng-container *ngFor="let book of books let esPar = even">
+    <!-- <div *ngIf = "books.length >0" class="condicional_ngIf"> -->
+         <ng-container *ngFor="let book of books let esPar = even">
            
             <!--Aquí comunicación PADRE-HIJO 
             donde "book","esPar","books" son los nombres de las variables
@@ -17,33 +17,7 @@ y sino el libro indicado por id_book.-->
             <!--Aquí comunicación HIJO-PADRE (bookEliminado)="eliminarBook($event)" proviene del hijo card.component.ts-->
             
         </ng-container>
-    </div>
+    <!-- </div> -->
     <ng-template #noBooks >No hay libros en este momento</ng-template>
-    <!--<div class="formulario">
-        <form>
-            <div class="form1">
-                <div class="tituloForm"><h1>Añadir Libro</h1></div>
-            </div>
-           
-            <div class="formEditar">
-                <input type="text" placeholder="ID Book" #id >
-                            
-                <input type="text" placeholder="Título" #title >
-                          
-                <input type="text" placeholder="Tapa blanda/dura" #type>
-            
-                <input type="text" placeholder="Autor" #author>
-            
-                <input type="number" placeholder="Precio" #price>
-            
-                <input type="text" placeholder="Foto" #photo>
-            </div>
-    
-        </form>
-
-        <div class="botonesFormulario">
-            <button  type="button" class="botonesFormulario-function" (click)="agregarBook(id.value, title.value, type.value, author.value, price.value, photo.value)">Insertar Libro</button>
-        </div>
-        
-    </div>-->
+   
 </div>
