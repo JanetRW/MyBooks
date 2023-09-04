@@ -29,6 +29,8 @@ export class AddBookComponent {
       if (!res.error)
       {
         alert("Libro agregado correctamente");
+        this.mybooks = res.res_book;
+      console.log(res.res_book);
         
       } 
       else

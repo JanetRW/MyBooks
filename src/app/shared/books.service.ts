@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class BooksService {
 
-  private url = "http://localhost:4000";
+  private url = "http://localhost:3000";
   constructor(private http: HttpClient){}
 
   // Métodos del servicio
@@ -19,21 +19,21 @@ export class BooksService {
 
   //-- Método para obtener un solo libro --> buscador.
   getOne(id_book:number):Observable<Object>{
-    return this.http.get(this.url + '?id=' + id_book);
+    return this.http.get(this.url + '/books/' + id_book);
   }
 
   //-- Método para añadir un libro --> Funcionalidad de la pg Add Book.
   add(book:Books):Observable<Object>{
-    return this.http.post(this.url+"/book", book);
+    return this.http.post(this.url+"/books", book);
   }
 
   //-- Método para editar un libro --> Funcionalidad de la pg Update Book.
   edit(book:Books):Observable<Object>{
-    return this.http.put(this.url + "/book",book);
+    return this.http.put(this.url + "/books", book);
   }
 
   //-- Método para borrar un libro --> Funcionalidad del botón 'X' de las cards de cada libro.
   delete(id_book:number):Observable<Object>{
-    return this.http.request('delete', this.url + "/book", {body:{id_book:id_book}});
+    return this.http.request('delete', this.url + "/books", {body:{id_book:id_book}});
   }
 }

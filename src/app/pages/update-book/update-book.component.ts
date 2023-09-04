@@ -12,7 +12,8 @@ export class UpdateBookComponent {
   public mybooks:Books;
 
   constructor(public booksService : BooksService) { }
-
+  ngOnInit(): void {
+  }
 
   public modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
     let precioNum = parseInt(newprecio)
@@ -20,15 +21,16 @@ export class UpdateBookComponent {
     console.log(precioNum);
     
 
-    let newBook = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto);
-    this.booksService.edit(newBook).subscribe((data:Respuesta)=>{
-  
-    console.log(newBook);
+    let bookEdited = new Books (IdNum, newtitulo, newtipo, newautor, precioNum, newfoto);
+    this.booksService.edit(bookEdited).subscribe((res:Respuesta)=>{
+    // console.log('Respuesta del servicio:', res);
+    console.log('Datos del libro a editar:', bookEdited);
 
-    if (!data.error)
+    if (!res.error)
     {
       alert("Libro editado");
-      
+      this.mybooks = res.res_book;
+      console.log(res.res_book);
     } 
     else
       alert("No se encuentra libro para editar");
@@ -39,3 +41,25 @@ export class UpdateBookComponent {
 
     
   }
+
+  
+/*     let editBook: Books = new Books(id_book,id_user,title,type,author,price,photo)
+    
+    
+    this.bookService.edit(editBook).subscribe((data:Response)=>{
+      console.log(editBook);
+    if (!data.error)
+    {
+      alert("Has editado un libro");
+      
+    } 
+    else
+    alert("No se encuentra el libro");
+
+   })
+   console.log(this.books);
+  }
+
+    
+  }
+ */
