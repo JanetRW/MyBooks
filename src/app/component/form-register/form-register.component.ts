@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, NgForm} from '@angular/forms';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-form-register',
@@ -9,15 +11,28 @@ import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/for
 export class FormRegisterComponent {
 
   public myForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) 
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserService) 
   { 
     this.buildForm();
   }
 
   public register() 
   {
-    let myUser = this.myForm.value;
-    console.log(myUser);
+    /* let myUser = this.myForm.value;
+    console.log(myUser); */
+    let {nombre,apellidos,email,foto,password} = this.myForm.value
+    console.log(nombre,apellidos,email,foto,password)
+    
+    let user = new User(0,nombre,apellidos,email,foto,password)//para crear un nuevo objeto de la Clase User y mandarlo al registerUser
+   
+
+    this.userService.registerUser(user).subscribe((res: any)=>{
+      console.log(res)
+      if (res.error == false) {
+       console.log(res)
+      }
+    })
     
   }
   private buildForm()
@@ -28,21 +43,45 @@ export class FormRegisterComponent {
       nombre: [, Validators.required],
       apellidos:[, Validators.required],
       email: [, [ Validators.required, Validators.email]],
+      foto:[, Validators.required],
       password:[, [Validators.required, Validators.minLength(minPassLength)]],
-      repeatPassword:[, [Validators.required, this.checkPasswords]],
-    })
+      /* repeatPassword:[, [Validators.required], { validators: this.checkPasswords}], */
+      repeatPassword:[, Validators.required],
+    } , { validators: this.checkPasswords} )
   }
-  private checkPasswords(control: AbstractControl)
+  /*this.myForm = this.fb.group({
+    password: ['', [Validators.required]],
+    confirmPassword: ['']
+  }, { validators: this.checkPasswords })
+*/
+  /*checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
+    let pass = group.get('password').value;
+    let confirmPass = group.get('confirmPassword').value
+    return pass === confirmPass ? null : { notSame: true }
+  }*/
+
+  public checkPasswords(group: AbstractControl)
   {
-    let resultado = {matchPassword: true};
+    //let resultado = {notMatchPassword: true};
+    //let pass = group.get('password').value;
+    //let pass = control.parent?.value.password;
+    //let confirmPass = control.parent?.value.repeatPassword;
+    //let confirmPass = control.get('repeatPassword').value
+   // console.log(pass)
+    //console.log(confirmPass)
 
-    
+    const pass = group.get("password")?.value;
+    const confirmPass = group.get("repeatPassword")?.value;
 
-    if (control.parent?.value.password == control.value)
-      resultado = null;
+    if(pass && confirmPass && pass !== confirmPass){
+      console.log("las contraseñas no coinciden");
+      return {notMatchPassword: true}
+    }
 
-    return resultado;
+    return null;
+      
   }
+
 
   // private checkPasswords(group: FormGroup) {
   //   const password = group.get('password').value;
@@ -50,23 +89,12 @@ export class FormRegisterComponent {
 
   //   return password === repeatPassword ? null : { passwordMismatch: true };
   // }
-  ngOnInit(): void 
+  ngOnInit(): void {}
 
-  {
-  }
-  
-  // ngOnInit(){
-  //   let minLength:number = 8;
-  //   this.myForm = new FormGroup({
-  //     'name': new FormControl(null, [Validators.required, Validators.minLength(3)]),
-  //     'apellidos': new FormControl(null, [Validators.required, Validators.minLength(3)]),
-  //     'email': new FormControl(null, [Validators.required, Validators.email]),
-  //     'password': new FormControl(null, [Validators.required, Validators.minLength(minLength)]),
-  //     'repeatPassword': new FormControl(null, [Validators.required, Validators.minLength(minLength)])
-  //   })
-  // }
-  
-  // onSubmit(){
+    
+  //onSubmit(){
+    
+
   //   let name = this.myForm.get('name').value;
   //   let apellidos = this.myForm.get('apellidos').value;
   //   let email = this.myForm.get('email').value;
@@ -82,5 +110,5 @@ export class FormRegisterComponent {
   //   }else{
   //     console.log("No coinciden contraseñas");
   //   }
-  // }
+ //}
 }

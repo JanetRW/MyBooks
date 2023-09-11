@@ -1,10 +1,56 @@
+<!-- <div class="padre">
+    <! caja izquierda -->
+    <!-- <div class="cajaIzquierda">
+        <div class="image">
+            <img [src]="miUser.photo" alt="">
+        </div>
+        <div class="titulo_Izq"><h1>{{miUser.nombreCompleto()}}</h1></div>
+        <section class="contenidoForm"> 
+            <form class="formDatos">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" [(ngModel)]="miUser.name" name="nombre">
+              
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" [(ngModel)]="miUser.last_name" name="apellido">
+       
+                <label for="email">Correo:</label>
+                <input type="text" id="email" [(ngModel)]="miUser.email" name="email">
+            </form>
+        </section>
+    </div> -->
+    <!-- caja derecha -->
+    <!-- <div class="cajaDerecha">
+        <form>
+            <div class="form1">
+                <div class="tituloDer"><h1>Editar datos</h1></div>
+                <div class="line"></div>
+            </div>
+            <div class="form2">
+                <div class="formEditar">
+                    <input type="text" placeholder="Nombre" #name1>
+                    <input type="text" placeholder="Apellidos" #last_name1>
+                    <input type="text" placeholder="Correo" #email1>
+                    <input type="text" placeholder="Url" #photo1>
+                </div>
+
+                <button (click)="modificar(name1.value, last_name1.value, email1.value, photo1.value)">
+                    Modificar
+                </button>
+            </div>
+        </form>    
+    </div> -->
+<!--</div> -->
+
+
+
 <div class="padre">
-    <!-- caja izquierda -->
+    <!--caja izquierda -->
     <div class="cajaIzquierda">
         <div class="image">
             <img src="{{miUser.photo}}" alt="">
         </div>
-        <div class="titulo_Izq"><h1>{{miUser.nombreCompleto()}}</h1></div>
+        <div class="titulo_Izq"><h1></h1></div>
         <section class="contenidoForm"> 
             <form class="formDatos">
                 <label for="nombre">Nombre:</label>
@@ -18,7 +64,7 @@
             </form>
         </section>
     </div>
-    <!-- caja derecha -->
+    <!--caja derecha -->
     <div class="cajaDerecha">
         <form>
             <div class="form1">
@@ -27,7 +73,7 @@
             </div>
             <div class="form2">
                 <div class="formEditar">
-                    <input type="text" placeholder="Nombre" #name1>
+                    <input type="text" placeholder="Nombre" #name1 >
                     <input type="text" placeholder="Apellidos" #last_name1>
                     <input type="text" placeholder="Correo" #email1>
                     <input type="text" placeholder="Url" #photo1>

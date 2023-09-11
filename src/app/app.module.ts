@@ -34,7 +34,7 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
     AddBookComponent,
     UpdateBookComponent,
     LoginComponent,
-    FormLoginComponent
+    FormLoginComponent,
     
   ],
   imports: [

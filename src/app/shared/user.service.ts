@@ -7,14 +7,30 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class UserService {
-  private url:string = "https:localhost:3000";
-
-  constructor(private http: HttpClient) {}
-
-  public getUser(id_user:number){
-    return this.http.get(this.url)
-}
-  public postUser(newUser: User){
-    return this.http.post(this.url, newUser)
+  private url:string = "http://localhost:3000";
+  public user:User;
+  public logueado: boolean;
+  
+  constructor(private http: HttpClient) {
+    
+    // this.url = 'http://localhost:3000/';
+    this.logueado = false;
   }
+
+  public registerUser(user:User):Observable<Object>{
+    return this.http.post(this.url+"/register", user); //users
 }
+
+  public loginUser(newUser: User):Observable<Object>{
+    return this.http.post(this.url+"/login", newUser);
+  }
+  public editUser(user: User):Observable<Object>{
+    return this.http.put(this.url+"/user", user);
+  }
+  
+}
+
+
+  
+  
+ 

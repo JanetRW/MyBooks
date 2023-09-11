@@ -3,7 +3,8 @@
 .contenido_Books{
   background-image: url('/assets/img/books.jpg');
   background-repeat: repeat;
-  padding: 14px 5px ;
+  /*padding: 14px 5px ;*/
+  /* height: 100vh; */
  }
 /* SEARCH ------------------------------------ */
 .buscador{

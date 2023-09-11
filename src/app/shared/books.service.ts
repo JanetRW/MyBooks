@@ -7,19 +7,25 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class BooksService {
-
+  pub
   private url = "http://localhost:3000";
   constructor(private http: HttpClient){}
 
   // Métodos del servicio
-  //-- Método para obtener todos los libros.
-  getAll():Observable<Object>{
-    return this.http.get(this.url + "/books");
+  //-- Método para obtener todos los libros de un usuario específico
+ 
+  getAll(id_user:number):Observable<Object>{
+    return this.http.get(this.url + "/books?id_user="+id_user);
   }
 
+ 
   //-- Método para obtener un solo libro --> buscador.
-  getOne(id_book:number):Observable<Object>{
-    return this.http.get(this.url + '/books/' + id_book);
+  // getOne(id_book:number):Observable<Object>{
+  //   return this.http.get(this.url + '/books/' + id_book);
+  // }
+
+  getOne(id_user:number,id_book:number):Observable<Object>{
+    return this.http.get(this.url + '/books?id_user=' + id_user + '&id_book=' + id_book);
   }
 
   //-- Método para añadir un libro --> Funcionalidad de la pg Add Book.

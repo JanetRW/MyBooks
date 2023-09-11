@@ -15,11 +15,7 @@ export class UpdateBookComponent {
   ngOnInit(): void {
   }
 
-<<<<<<< HEAD
-  modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
-=======
   public modificarBook(newIdBook:string, newtitulo:string, newtipo:string, newautor:string, newprecio:string, newfoto:string){
->>>>>>> dia7
     let precioNum = parseInt(newprecio)
     let IdNum = parseInt(newIdBook)
     console.log(precioNum);

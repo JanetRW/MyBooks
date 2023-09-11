@@ -13,7 +13,7 @@
         <!--input correo-->
             <div class="form-group">
             
-                <input type="email" class="form-control" placeholder="Correo electrónico" style="width: 250px;"  name="email" [(ngModel)]="user.email" #emailId="ngModel"
+                <input value="patyybar@hotmail.com" type="email" class="form-control" placeholder="Correo electrónico" style="width: 250px;"  name="email" [(ngModel)]="user.email" #emailId="ngModel"
                 [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" email required>
                 <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback">
                     <div *ngIf="emailId.errors.required">La dirección de email es obligatoria</div>
@@ -23,7 +23,7 @@
         <!--input Contraseña-->
             <div class="form-group">
             
-                <input type="password" class="form-control" placeholder="Contraseña" style="width: 250px;" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
+                <input value="barreto123" type="password" class="form-control" placeholder="Contraseña" style="width: 250px;" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
                 [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid }" minlength="8" required>
                 <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="invalid-feedback">
                     <div *ngIf="passwordId.errors.required">La clave es obligatoria</div>
